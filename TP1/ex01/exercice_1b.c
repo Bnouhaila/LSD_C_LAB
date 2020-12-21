@@ -4,17 +4,22 @@
 
 float *remontee(float A[N][N], float B[N], int n)
 {
-
-  /* A hint: you cant return an array which is allocated in the stack memory. \
-  ** you may consider to create a dynamically allocated array and return a pointer to it. \
-  ** https://gribblelab.org/CBootCamp/7_Memory_Stack_vs_Heap.html
-  */
-
-  /******Implement the solution here******/
-  /***************************************/
-  
-  /***************************************/
-  return x;
+	float *X;
+	X=malloc(sizeof(float) * n);
+	int i ;
+	int j;
+	float s;
+	X[N-1] = B[N-1] / A[N][N];
+	for(i = n-2; i>0 ; i--)
+	{
+		s = 0;
+		for(j=i+1; j<n-1; j++)
+		{
+			s=s+A[i][j]*X[j];
+		}
+	X[i] = (B[i] - s)/A[i][i];
+	}
+  return X;
 }
 
 int main()
@@ -49,8 +54,8 @@ int main()
   x = remontee(A, B, n);
 
   /* Printing the results */
-  printf("\nThe resulting vector: [");
+  printf("\nsolution: ");
   for (int i = 0; i < n; i++)
-    printf("%f%c", x[i], ",]"[i == n - 1]);
+    printf("%f\n", x[i]);
 }
 

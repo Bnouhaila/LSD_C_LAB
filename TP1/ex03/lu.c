@@ -52,7 +52,7 @@ float *lu(float A[N][N], float B[N], int n)
 int main()
 {
   float   A[N][N], B[N];
-  float   *x;
+  float   *X;
   int     n;
 
   printf("Enter the size of the matrix: ");

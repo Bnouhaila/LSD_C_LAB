@@ -5,19 +5,23 @@
 
 float *descente(float A[N][N], float B[N], int n)
 {
-  float   *x;
+  float   *X;
+  X = malloc(sizeof(float) * n);
+  int i , j;
+  float s;
+  X[0]=B[0]/A[0][0];
+  for( i =1 ; i < n ; i++)
+  {
+	  s = 0;
+	  for(j = 1; j = i - 1; j++)
+	  {
+		  s = s+A[i][j] * X[j];
+          }
+	  X[i] = (B[i] - s)/A[i][i];
+  }	  
+		
 
-  /* Here we allocate the result verctor \
-  (you're gonna do it yourself in the next exercises)*/
-  x = malloc(sizeof(float) * n);
-
-
-  /******Implement the solution here******/
-  /***************************************/
-  
-  /****************************************/
-
-  return (x);
+  return (X);
 }
 
 

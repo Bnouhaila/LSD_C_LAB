@@ -78,11 +78,11 @@ int main()
   }
 
   /* The calculation of the result */
-  x = lu(A, B, n);
+  X = lu(A, B, n);
 
   /* Printing the results */
   printf("\nThe resulting vector: [");
   for (int i = 0; i < n; i++)
-    printf("%f%c", x[i], ",]"[i == n - 1]);
+    printf("%f%c", X[i], ",]"[i == n - 1]);
 }
 
